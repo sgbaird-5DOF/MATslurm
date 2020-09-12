@@ -1,2 +1,2 @@
 # MATslurm
-Submit slurm sbatch scripts using MATLAB interface with smart binning of jobs based on walltime and compute server parameters. It also features tracking of model parameters and results and concatenation of those parameters and results even as the model changes. Designed to take the supercomputer setup and results compilation and make it agnostic to the MATLAB code being run.
+Submit slurm sbatch scripts using MATLAB with versatile function parameter testing and smart binning of jobs based on walltime. Thoroughly track and concatenate model parameters and results, even if model changes. Makes the slurm setup and results concatenation agnostic to the function being tested.
