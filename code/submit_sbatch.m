@@ -12,7 +12,13 @@ end
 % file
 %--------------------------------------------------------------------------
 % Inputs:
-%  a - a
+%  parpath -
+%  cores -
+%  mem -
+%  qosopt - 
+%  scriptfpath - 
+%  NV.Ntrim - 
+%  NV.jobwalltimes - 
 %
 % Outputs:
 %  b - b
@@ -41,7 +47,7 @@ end
 Nidxlength = length(Ntrim); %number of jobs
 
 % general environment variables
-setenv('cores',int2str(cores))
+setenv('nworkers',int2str(cores))
 setenv('parpath',['"',parpath,'"']);
 
 for jid = 1:Nidxlength
@@ -49,7 +55,7 @@ for jid = 1:Nidxlength
 %     setenv('jid',sprintf(int2str(jid)))
 %     setenv(sprintf(['walltime',int2str(jid)]),sprintf(int2str(jobwalltimes(jid)))) %only for displaying on cmd line
     
-    cmd = get_cmd(Ntrim,jid,cores,jobwalltimes,mem,qosopt,scriptfpath);
+    cmd = get_cmd(Ntrim,jid,cores,nworkers,jobwalltimes,mem,qosopt,scriptfpath);
     disp(cmd)
     [status,cmdout] = system(cmd)
 end
