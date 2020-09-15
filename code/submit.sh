@@ -36,7 +36,7 @@ echo "walltime: $walltime"
 
 
 module load matlab/r2019b
-pc_opts="pc=parcluster('local'); pc.JobStorageLocation = '$TMPDIR'; parpool(pc,$cores,'SpmdEnabled',false);"
+pc_opts="pc=parcluster('local'); pc.JobStorageLocation = '$TMPDIR'; parpool(pc,$nworkers,'SpmdEnabled',false);"
 echo $pc_opts
 #matlab -nodisplay -nosplash -r "$pc_opts; run; exit"
 #matlab -nodisplay -nosplash -r "$pc_opts; randOctParityData; randOctParityPlot; exit"
