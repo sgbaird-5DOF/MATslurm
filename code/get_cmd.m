@@ -7,7 +7,7 @@ arguments
    mem(1,1) double = 1024*4 %MB
    qosopt char = 'test'
    scriptfpath char = 'submit.sh'
-   dirpath char = './'
+   dirpath char = '../../' %default to just above MATslurm
 end
 % GET_CMD  get slurm command to submit an sbatch script
 %--------------------------------------------------------------------------
