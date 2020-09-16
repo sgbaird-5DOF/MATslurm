@@ -4,7 +4,7 @@ arguments
     cores = 24
     mem = 1024*4*cores %MB
     qosopt = 'test'
-    scriptfpath = 'submit.sh'
+    scriptfpath = fullfile('MATslurm','code','submit.sh')
     NV.Ntrim = 1
     NV.jobwalltimes = 60
 end
