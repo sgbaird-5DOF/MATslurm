@@ -7,6 +7,7 @@ arguments
     scriptfpath = fullfile('MATslurm','code','submit.sh')
     NV.Ntrim = 1
     NV.jobwalltimes = 60
+    NV.spmdQ = true
 end
 % SUBMIT_SBATCHES submit multiple sbatch jobs that depend on a parameter
 % file
@@ -48,6 +49,7 @@ Nidxlength = length(Ntrim); %number of jobs
 
 % general environment variables
 setenv('cores',int2str(cores))
+setenv('spmdQ',int2str(NV.spmdQ))
 setenv('parpath',['"',parpath,'"']);
 
 for jid = 1:Nidxlength
@@ -57,7 +59,10 @@ for jid = 1:Nidxlength
     
     cmd = get_cmd(Ntrim,jid,cores,jobwalltimes,mem,qosopt,scriptfpath);
     disp(cmd)
-    [status,cmdout] = system(cmd)
+    [status,cmdout] = system(cmd);
+    disp(' ')
+    disp(['status = ' int2str(status)])
+    disp(['cmdout = ' cmdout])
 end
 
 end

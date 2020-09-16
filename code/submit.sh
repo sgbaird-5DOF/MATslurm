@@ -36,12 +36,12 @@ echo "walltime: $walltime"
 
 
 module load matlab/r2019b
-pc_opts="pc=parcluster('local'); pc.JobStorageLocation = '$TMPDIR'; parpool(pc,$cores,'SpmdEnabled',false);"
+pc_opts="pc=parcluster('local'); pc.JobStorageLocation = '$TMPDIR'; parpool(pc,$cores,'SpmdEnabled',logical($spmdQ));"
 echo $pc_opts
 #matlab -nodisplay -nosplash -r "$pc_opts; run; exit"
 #matlab -nodisplay -nosplash -r "$pc_opts; randOctParityData; randOctParityPlot; exit"
 
-matlab -nodisplay -nosplash -r "$pc_opts; exec_combs($parpath, $jid, $tid)"
+matlab -nodisplay -nosplash -r "$pc_opts; addpathdir('exec_combs.m'); exec_combs($parpath, $jid, $tid)"
 echo "Cleaning up temporary directory at end of script, meaning that the job exited cleanly"
 rm -rfv $TMPDIR
 
