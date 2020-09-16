@@ -5,7 +5,7 @@ arguments
     execfn function_handle %#ok<INUSA> %gets saved in parameter file
     argoutnames cell %#ok<INUSA> %gets saved in parameter file
     walltimefn function_handle = @() 60
-    uuid double = get_uuid()
+    uuid char = get_uuid()
     excludefpath char = ''
     NV.maxwalltime(1,1) double = 59
     NV.maxtasks(1,1) double = 500
@@ -153,7 +153,7 @@ datafilepath = @(ng) fullfile(datafolder,datafilename(ng));
 
 %parameter
 disp('saving parameter file')
-parfolder = fullfile('parameters');
+parfolder = fullfile('../../parameters');
 parname = ['uuID-',uuid,'.mat'];
 parpath = fullfile(parfolder,parname);
 save(parpath)
