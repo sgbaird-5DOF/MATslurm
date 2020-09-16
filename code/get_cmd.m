@@ -1,4 +1,4 @@
-function cmd = get_cmd(Ntrim,jid,cores,jobwalltimes,mem,qosopt,scriptfpath,dirpath)
+function cmd = get_cmd(Ntrim,jid,cores,jobwalltimes,mem,qosopt,scriptfpath,dirpath,NV)
 arguments
    Ntrim double = 1
    jid double = 1
