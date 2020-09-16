@@ -8,6 +8,7 @@ arguments
    qosopt char = 'test'
    scriptfpath char = fullfile('MATslurm','code','submit.sh')
    dirpath char = './' %default to just above MATslurm
+   NV.requeueQ logical = true
 end
 % GET_CMD  get slurm command to submit an sbatch script
 %--------------------------------------------------------------------------
@@ -53,11 +54,16 @@ end
 imageopt = ['']; %[' -C rhel7 '];
 jobnameopt = ['--job-name=batch',int2str(jid)];
 memopt = ['--mem=',int2str(mem)]; %changed from --mem-per-cpu to --mem 2020-09-11 SGB
+if NV.requeueQ
+    reQopt = ['--requeue']; %'', '--requeue', e.g. requeue if preempted
+else
+    reQopt = [''];
+end
 diropt = ['-D ' dirpath];
 scriptopt = [ scriptfpath ];
 bckgdopt = ''; %[' &'];
 
 %-------submit sbatch script--------
 cmd = strjoin({arrayopt,coreopt,qosopt,timeopt,...
-	imageopt,jobnameopt,memopt,diropt,scriptopt,bckgdopt},' ');
+	imageopt,jobnameopt,memopt,reQopt,diropt,scriptopt,bckgdopt},' ');
 end %get_cmd
