@@ -153,7 +153,7 @@ datafilepath = @(ng) fullfile(datafolder,datafilename(ng));
 
 %parameter
 disp('saving parameter file')
-parfolder = fullfile('../../parameters');
+parfolder = fullfile('parameters');
 parname = ['uuID-',uuid,'.mat'];
 parpath = fullfile(parfolder,parname);
 save(parpath)
