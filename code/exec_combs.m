@@ -61,7 +61,7 @@ for i = 1:ncombs
 
     %% output
     savepath = exec_argfn(savepathfn,parcombs);
-    save(savepath,'out','-v7.3')
+    save(savepath,'-struct','out','-v7.3')
     
     %close diary entry
     diary('off')
