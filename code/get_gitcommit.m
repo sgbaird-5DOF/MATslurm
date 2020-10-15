@@ -12,6 +12,6 @@ end
 [status,cmdout] = system('git status --porcelain');
 if status == 0
     if ~isempty(cmdout)
-        warning('Working directory not clean (i.e. uncommitted/unpushed) files exist. Use git commit -am "<message>"; git push')
+        warning('Working directory not clean (i.e. uncommitted/unpushed) files exist. Use !git commit -am "<message>", then !git push')
     end
 end
