@@ -67,7 +67,8 @@ for i = 1:length(fns)
     
     numIDs = cellfun(fn,parvals);
     nums = cellfun(@(parval) changefn(parval),parvals,'UniformOutput',false);
-    [parvals{numIDs}] = nums{:};
+    tmp = nums(numIDs);
+    [parvals{numIDs}] = tmp{:};
 end
 
 %check for non-cell parameter lists

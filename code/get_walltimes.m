@@ -20,7 +20,11 @@ if ~isempty(argnames{1})
         %unpack argument name
         argname = argnames{i};
         %concatenate and convert to cell
-        argvals(:,i) = num2cell(vertcat(parcombs.(argname)));
+        if ischar(parcombs(1).(argname))
+            argvals(:,i) = {parcombs.(argname)};
+        else
+            argvals(:,i) = num2cell(vertcat(parcombs.(argname)));
+        end
     end
     
     %loop through combinations
