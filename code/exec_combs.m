@@ -63,6 +63,14 @@ for i = 1:ncombs
     savepath = exec_argfn(savepathfn,parcombs);
     save(savepath,'-struct','out','-v7.3')
     
+    if any(contains(argoutnames,'mdlpars'))
+        % save a "meta" file with much less info
+        ID = strfind(reverse(savepath),'.');
+        savepath2 = [savepath(1:end-ID),'_meta',savepath(end-ID+1:end)];
+        mdlpars = out.mdlpars;
+        save(savepath2,'-struct','mdlpars','-nocompression');
+    end
+    
     %close diary entry
     diary('off')
 end
