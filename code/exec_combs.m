@@ -47,7 +47,7 @@ end
 parcombset = parcombsets{jid,tid};
 ncombs = length(parcombset); %number of parameter combinations
 %% loop through parameter combinations
-for i = 1:ncombs    
+for i = 1:ncombs
     %% setup
     %unpack parameter
     parcombs = parcombset(i);
