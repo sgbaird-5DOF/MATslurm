@@ -12,8 +12,8 @@ arguments
     NV.maxtaskstot(1,1) double = 5000
     NV.walltimecushion(1,1) double = 20
     NV.nreps(1,1) double = 1
-    NV.diarypathfn function_handle = @(puuid) fullfile('data','diary',[puuid '.txt']);
-    NV.savepathfn function_handle = @(puuid) fullfile('data','pcombs',[puuid '.txt']);
+    NV.diarypathfn function_handle = @(puuid) fullfile('data','diary',[puuid '.txt']); %#ok<FVUBD>
+    NV.savepathfn function_handle = @(puuid) fullfile('data','pcombs',[puuid '.txt']); %#ok<FVUBD>
 end
 % WRITEPARFILE generate a parameters file for an sbatch submission
 %--------------------------------------------------------------------------
