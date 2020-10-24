@@ -120,7 +120,7 @@ parcombs(1).seed = [];
 tmp = num2cell(seeds);
 [parcombs.seed] = tmp{:};
 
-%% random unique ID for each parameter combination
+%% git commit hash for each parameter combination
 gitcommittmp = get_gitcommit();
 gitcommit = repelem(gitcommittmp,ncombs,1);
 %package
