@@ -46,11 +46,15 @@ end
 %unpack based on job id and task id
 parcombset = parcombsets{jid,tid};
 ncombs = length(parcombset); %number of parameter combinations
+
 %% loop through parameter combinations
 for i = 1:ncombs
-    %% setup
+    %% setup    
     %unpack parameter
     parcombs = parcombset(i);
+    
+    %set random number generator
+    rng(parcombs.seed)
     
     %diary entry    
     diarypath = exec_argfn(diarypathfn,parcombs);
