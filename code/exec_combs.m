@@ -72,7 +72,8 @@ for i = 1:ncombs
         ID = strfind(reverse(savepath),'.');
         savepath2 = [savepath(1:end-ID),'_meta',savepath(end-ID+1:end)];
         mdlpars = out.mdlpars;
-        save(savepath2,'-struct','mdlpars','-nocompression');
+        pause(5)
+        save(savepath2,'-struct','mdlpars');
     end
     
     %close diary entry
