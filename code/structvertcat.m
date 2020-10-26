@@ -27,9 +27,9 @@ end
 %
 % Notes:
 %--------------------------------------------------------------------------
+
 % convert structures to tables
 T = cellfun(@(S) struct2table(S,'AsArray',true),S,'UniformOutput',false);
-% 
 % concatenate tables
 Tcat = tblvertcat(T{:});
 % convert back to structure
