@@ -4,9 +4,9 @@ arguments
    S struct
    argoutnames = []
 end
-% EXEC_ARGFN execute function_handle by retrieving argument values from a
-% structure and return single output (1 output argument) or struct
-% with fields from argoutnames (multiple output arguments)
+% EXEC_ARGFN execute function_handle by automatically retrieving argument values from a structure
+%  and return single output (1 output argument) or struct with fields from
+%  argoutnames (multiple output arguments)
 %--------------------------------------------------------------------------
 % Inputs:
 %  fn - function to execute

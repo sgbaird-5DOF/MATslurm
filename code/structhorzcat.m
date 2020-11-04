@@ -2,8 +2,8 @@ function Sout = structhorzcat(S)
 arguments (Repeating)
     S(1,1) struct
 end
-% STRUCTHORZCAT  "horizontally" concatenate any number of structures with
-% different variables (no overlapping variables, scalar struct).
+% STRUCTHORZCAT  "horizontally" concatenate structures with different variables
+%  (no overlapping variables, scalar struct).
 %--------------------------------------------------------------------------
 % Author(s): Sterling Baird
 %

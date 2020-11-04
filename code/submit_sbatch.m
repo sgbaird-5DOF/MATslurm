@@ -9,8 +9,7 @@ arguments
     NV.jobwalltimes = 60
     NV.spmdQ = true
 end
-% SUBMIT_SBATCHES submit multiple sbatch jobs that depend on a parameter
-% file
+% SUBMIT_SBATCH submit multiple sbatch jobs that depend on a parameter file via writeparfile.m
 %--------------------------------------------------------------------------
 % Inputs:
 %  parpath -

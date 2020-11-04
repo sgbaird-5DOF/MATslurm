@@ -2,13 +2,11 @@ function Sout = structvertcat(S)
 arguments (Repeating)
     S struct
 end
+% STRUCTVERTCAT  "vertically" concatenate structs with different variables, filling in dummy values as needed
 %--------------------------------------------------------------------------
 % Author(s): Sterling Baird
 %
 % Date: 2020-09-05
-%
-% Description: "vertically" concatenate any number of structures with
-% different variables, filling in dummy values where necessary.
 %
 % Inputs:
 %  S - struct, where each struct corresponds to a set of e.g.

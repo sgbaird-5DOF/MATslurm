@@ -1,5 +1,5 @@
 function [gitcommit, comment] = get_gitcommit()
-% git commit version
+% GET_GITCOMMIT  get git commit version (or return empty '' if error)
 [status,cmdout] = system('git rev-parse HEAD');
 if status == 0
     gitcommit = cmdout(1:7);

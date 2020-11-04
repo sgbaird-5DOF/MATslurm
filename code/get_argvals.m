@@ -4,8 +4,7 @@ arguments
     fn
     argnames = []
 end
-% GET_ARGVALS get argument values of a function by parsing values from a
-% struct
+% GET_ARGVALS get argument values of a function by parsing values from a struct
 %--------------------------------------------------------------------------
 % Inputs:
 %  S - struct array containing e.g. parameter combinations with
