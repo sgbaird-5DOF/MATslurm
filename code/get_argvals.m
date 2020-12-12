@@ -38,5 +38,8 @@ for i = 1:nargs
     %unpack argument name
     argname = argnames{i};
     %concatenate and convert to cell
-    argvals(:,i) = num2cell(vertcat(S.(argname)),2);
+    if ~isfield(S,argname)
+        error(['double check that "pars" variable in randOctParityData contains ',argname])
+    end
+        argvals(:,i) = num2cell(vertcat(S.(argname)),2);
 end
