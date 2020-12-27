@@ -58,8 +58,8 @@ parnames = parcell(1:2:end);
 parvals = parcell(2:2:end);
 
 %convert numerics and chars to cells
-fns = {@isnumeric,@ischar};
-changefns = {@(x) num2cell(x,1),@(x) num2cell(x,2)};
+fns = {@isnumeric,@ischar,@islogical};
+changefns = {@(x) num2cell(x,1),@(x) num2cell(x,2),@(x) num2cell(x,1)};
 for i = 1:length(fns)
     %unpack
     changefn = changefns{i};
