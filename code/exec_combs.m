@@ -68,8 +68,8 @@ for i = 1:ncombs
     
     if any(contains(argoutnames,'mdlpars'))
         % save a "meta" file with much less info
-        ID = strfind(reverse(savepath),'.');
-        savepath2 = [savepath(1:end-ID),'_meta',savepath(end-ID+1:end)];
+        [fpath,fname,fext] = fileparts(savepath);
+        savepath2 = fullfile(fpath,[fname '_meta' fext]);
         mdlpars = out.mdlpars;
         pause(5)
         save(savepath2,'-struct','mdlpars');
@@ -132,5 +132,7 @@ n = length(argoutnames); %number of output arguments of execfn
 %     end
 
 
+%         ID = strfind(reverse(savepath),'.');
+%         savepath2 = [savepath(1:end-ID),'_meta',savepath(end-ID+1:end)];
 
 %}
