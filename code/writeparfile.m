@@ -123,10 +123,11 @@ tmp = num2cell(seeds);
 %% git commit hash for each parameter combination
 [gitcommittmp,~,warnedQ] = get_gitcommit();
 if warnedQ
-    m = input(['Warning issued from get_gitcommit. You may commit/push as needed. Continue (y) or abort (n)? '],'s');
+    m = input(['Warning issued from get_gitcommit. Commit/push as needed. Continue (y) or abort (n)? '],'s');
     if ~strcmp(m,'y') && ~strcmp(m,'Y')
         error('User chose to abort')
     end
+    gitcommittmp = get_gitcommit();
 end
 gitcommit = repelem(gitcommittmp,ncombs,1);
 %package
