@@ -121,7 +121,13 @@ tmp = num2cell(seeds);
 [parcombs.seed] = tmp{:};
 
 %% git commit hash for each parameter combination
-gitcommittmp = get_gitcommit();
+[gitcommittmp,~,warnedQ] = get_gitcommit();
+if warnedQ
+    m = input(['Warning issued from get_gitcommit. You may commit/push as needed. Continue (y) or abort (n)? '],'s');
+    if ~strcmp(m,'y') && ~strcmp(m,'Y')
+        error('User chose to abort')
+    end
+end
 gitcommit = repelem(gitcommittmp,ncombs,1);
 %package
 parcombs(1).gitcommit = '';
