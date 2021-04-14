@@ -58,6 +58,10 @@ for i = 1:ncombs
     
     %diary entry    
     diarypath = exec_argfn(diarypathfn,parcombs);
+    fp = fileparts(diarypath);
+    if exist(fp,'dir') ~= 7
+        mkdir(fp);
+    end
     diary(diarypath)
     
     %% execute function
@@ -71,6 +75,10 @@ for i = 1:ncombs
         [fpath,fname,fext] = fileparts(savepath);
         savepath2 = fullfile(fpath,[fname '_meta' fext]);
         mdlpars = out.mdlpars;
+        fp = fileparts(savepath2);
+        if exist(fp,'dir') ~= 7
+            mkdir(fp)
+        end
         pause(5)
         save(savepath2,'-struct','mdlpars');
         disp(savepath2)
