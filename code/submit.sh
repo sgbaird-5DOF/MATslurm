@@ -35,7 +35,7 @@ walltime=${!walltime_name}
 echo "walltime: $walltime"
 
 
-module load matlab/r2019b
+module load matlab
 pc_opts="pc=parcluster('local'); pc.JobStorageLocation = '$TMPDIR'; parpool(pc,$cores,'SpmdEnabled',logical($spmdQ));"
 echo $pc_opts
 #matlab -nodisplay -nosplash -r "$pc_opts; run; exit"
